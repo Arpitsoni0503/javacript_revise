@@ -35,6 +35,11 @@ test();
 console.log(a);
 
 var a = 10;
+//  b is also hoisted but  in temporal dead zone
+// it gives ReferenceError
+console.log(b);
+
+let b = 10;
 
 // Question 4 : Temporal Dead Zone
 
