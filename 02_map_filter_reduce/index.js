@@ -4,16 +4,16 @@
 
 const nums = [1, 2, 3, 4];
 
-const multiplyThree = nums.map((num, i, arr) => num * 3); // cb can take num, index and array
+const multiplyThree = nums.map((num, i, arr) => num * num); // cb can take num, index and array
 console.log(multiplyThree);
 
 
 
 // Question 2 : Array.filter()
 
-const nums = [1, 2, 3, 4];
+const nums= [1, 2, 3, 4];
 
-const moreThanTwo = nums.filter((num, i, arr) => num > 2 === 0);
+const moreThanTwo = nums.filter((num, i, arr) => num > 2);
 console.log(moreThanTwo);
 
 
@@ -30,7 +30,7 @@ console.log(sum); // 10
 
 
 
-// Question 4 : Map Polyfill
+// Question 4 : Map Polyfill ->creating our own map 
 
 Array.prototype.myMap = function (cb) {
   let temp = [];
@@ -40,8 +40,6 @@ Array.prototype.myMap = function (cb) {
 
   return temp;
 };
-
-
 
 // Ques 5 : Filter Polyfill
 
@@ -82,12 +80,12 @@ let students = [
 // Q1 - Return only the names of students in capital
 
 // Solution 1 : Traditional for() loop
-let names = [];
-for (let index = 0; index < studentRecords.length; index++){
-     names.push(students[index].name.toUpperCase());
+let names1 = [];
+for (let index = 0; index < students.length; index++){
+     names1.push(students[index].name.toUpperCase());
 }
 
-console.log(names);
+console.log(names1);
 
 // Solution 2 : forEach()
 let names = []

@@ -1,7 +1,7 @@
 // FUNCTION Interview Questions
 
 // Question 1 : Function Code
-
+//first class functions//pass fn to another fn like variable
 function square(num) {
   return num * num;
 }
@@ -20,7 +20,7 @@ displaySquare(square);
 // Eg-2
 (function (x) {
   return (function (y) {
-    console.log(x);
+    console.log(x);//1 becasue if x is not present in this scope it will find it in the parent scope
   })(2);
 })(1);
 
@@ -100,10 +100,15 @@ fun();
 
 // Question 6 :  Params vs arguments
 
-const fn = (a, x, y, ...numbers) => {
+const fn1 = (a,  ...numbers,x, y,) => {//params,gives error of rest aprameter because it hould be last params
     console.log(x, y)
 };
-fn(5,6,7,8);
+fn1(5,6,7,8);//arguments
+
+const fn = (a, x, y, ...numbers) => {//params,numbers takes remaing arguments
+    console.log(x, y,numbers)
+};
+fn(5,6,7,8,9,10);//arguments
 
 
 
@@ -116,7 +121,7 @@ multiply(...arr) // Spread operator
 
 
 
-// Question 8 : Callback
+// Question 8 : Callback ->eventlisteners,timeout,map,filter,reduce
 
 function greeting(name) {
     alert('Hello ' + name);
@@ -146,13 +151,15 @@ const addNum = (firstNum, secondNum) => firstNum + secondNum;
 let user = {
     name: "Roadside Coder",
     rc1: () => {
-      console.log("Subscribe to " + this.name);
+      console.log("Subscribe to " + this.name);//Subscribe to undefined
     },
     rc2() {
-      console.log("Subscribe to " + this.name);
+      console.log("Subscribe to " + this.name);//Subscribe to Roadside Coder
     },
 };
 
+user.rc1();
+user.rc2();
 
 ///////////NOTES////////////
 
